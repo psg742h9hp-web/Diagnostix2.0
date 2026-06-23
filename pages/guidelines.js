@@ -11,6 +11,7 @@ function Section({ label, children, color = 'slate' }) {
     amber: 'border-amber-200 bg-amber-50',
     emerald: 'border-emerald-200 bg-emerald-50',
     blue: 'border-blue-200 bg-blue-50',
+    indigo: 'border-indigo-200 bg-indigo-50',
   }
   const labelMap = {
     slate: 'text-slate-600',
@@ -18,6 +19,7 @@ function Section({ label, children, color = 'slate' }) {
     amber: 'text-amber-700',
     emerald: 'text-emerald-700',
     blue: 'text-blue-700',
+    indigo: 'text-indigo-700',
   }
   return (
     <div className={`border rounded-lg p-4 ${colorMap[color]}`}>
@@ -182,6 +184,10 @@ export default function Guidelines() {
 
                 <Section label={t.analysis.redFlags} color="red">
                   <BulletList items={selected.redFlags?.[lang] || selected.redFlags?.en || []} />
+                </Section>
+
+                <Section label={t.analysis.etiology} color="indigo">
+                  <BulletList items={selected.etiology?.[lang] || selected.etiology?.en || []} />
                 </Section>
 
                 <Section label={t.analysis.mimics} color="amber">
